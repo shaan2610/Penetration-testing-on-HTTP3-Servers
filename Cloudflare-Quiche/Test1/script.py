@@ -17,24 +17,9 @@ listx = list(x)
 
 # Perform the change as per the experiment
 
-# Increased the Length parameter in QUIC payload
-listx[32] = 'f'
-listx[33] = 'f'
-listx[34] = 'f'
-listx[35] = 'f'
-
-# Make all payload as A
-for i in range(38, len(listx), 2):
-    listx[i] = '4'
-    listx[i + 1] = '1'
-
-# Append B
-for i in range(1, 223):
-    listx.append('4')
-    listx.append('2')
-
-packet[IP].len = 1370
-packet[UDP].len = 1350
+# Set Version number to zero (2nd, 3rd, 4th and 5th bytes in payload represent Version number)
+listx[8] = '0'
+listx[9] = '0'
 
 # Join the list into str format again
 x = ''.join(listx)
@@ -46,7 +31,7 @@ bytesX = codecs.decode(x, 'hex_codec')
 packet[Raw].load = bytesX
 
 # Write the modified packet to a pcapng file
-wrpcap('buffer_overflow.pcapng', packet)
+wrpcap('version_zero.pcapng', packet)
 
 # Send the packet cnt number of times
 cnt=1
