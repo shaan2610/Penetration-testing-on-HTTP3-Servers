@@ -1,5 +1,5 @@
-# Server : aioquic
-# Link : https://pgjones.dev/
+# Server : Nginx Quic
+# Link : https://quic.nginx.org/
 
 from scapy.all import *
 import codecs
@@ -34,7 +34,8 @@ packet[Raw].load = bytesX
 wrpcap('fixed_bit.pcapng', packet)
 
 # Send the packet cnt number of times
-cnt=1
-while cnt > 0:
+
+cnt = 10000
+
+for i in range(cnt):
     sendp(packet)
-    cnt -= 1
