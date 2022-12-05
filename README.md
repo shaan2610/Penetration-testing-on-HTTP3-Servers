@@ -1,6 +1,6 @@
 # BTech Project : Penetration Testing of HTTP/3.0 Servers
 
-Please refer this [link](https://docs.google.com/spreadsheets/d/1JcexNmwQSTxIEzCDZede9PI-nHgD3X-RktHXfKvXJeI/edit?usp=sharing) for readings of Handshake Time & Packet RX Time observed for different servers while testing.
+Please refer this link for readings of Handshake Time & Packet RX Time observed for different servers while testing: [Observed Readings](https://docs.google.com/spreadsheets/d/1JcexNmwQSTxIEzCDZede9PI-nHgD3X-RktHXfKvXJeI/edit?usp=sharing) 
 
 Experiment description :-
 
